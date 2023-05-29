@@ -1,28 +1,14 @@
-import { useContext } from 'react';
-import MapContext from '../components/MapContextProvider';
-import { MapData } from '../types';
+import TitleFrameImage from '../components/TitleFrameImage';
+import MapSelector from '../components/MapSelector';
+import InfoDisplay from '../components/InfoDisplay';
 
 function UIContainer() {
-  const data = useContext(MapContext);
-  const allMapsData = data.allMapsData;
-
   return (
-    <>
-      {allMapsData.map((mapData: MapData, idx: number) => (
-        <span
-          key={idx}
-          className="map-selector-span"
-          onClick={() => data.setCurrentMap(mapData)}
-          style={{
-            display: "inline-block",
-            margin: "10px",
-            cursor: "pointer"
-          }}
-        >
-          {mapData.name}
-        </span>
-      ))}
-    </>
+    <div id="ui-container">
+      <TitleFrameImage />
+      <InfoDisplay />
+      <MapSelector />
+    </div>
   )
 }
 

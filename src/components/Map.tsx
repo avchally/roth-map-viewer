@@ -21,10 +21,10 @@ export default function Map() {
 
   }, [mapData])
 
-  const MAX_POINTS = 20000;
+  // const MAX_POINTS = 20000;
 
-  const points = new THREE.BufferAttribute(new Float32Array(MAX_POINTS * 3), 3);
-  const indices = new THREE.BufferAttribute(new Uint32Array(MAX_POINTS * 2), 1);
+  // const points = new THREE.BufferAttribute(new Float32Array(MAX_POINTS * 3), 3);
+  // const indices = new THREE.BufferAttribute(new Uint32Array(MAX_POINTS * 2), 1);
 
   return (
     <lineSegments>
@@ -32,14 +32,14 @@ export default function Map() {
         ref={ref}
         attach="geometry"
       >
-        <bufferAttribute
+        {/* <bufferAttribute
           attach="attributes-position"
           {...points}
-        />
-        <bufferAttribute
+        /> */}
+        {/* <bufferAttribute
           attach="index"
           {...indices}
-        />
+        /> */}
       </bufferGeometry>
       <lineBasicMaterial
         attach="material"

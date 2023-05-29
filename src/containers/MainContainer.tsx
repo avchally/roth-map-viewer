@@ -8,17 +8,17 @@ export default function MainContainer() {
   const data = useContext(MapContext);
 
   return (
-    <>
+    <div className="main-container">
       {
         data.isLoaded
         ? <>
-            <UIContainer />
             <CanvasContainer />
+            <UIContainer />
           </>
         : <Loading />
 
       }
       
-    </>
+    </div>
   );
 }
