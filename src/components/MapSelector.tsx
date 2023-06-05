@@ -20,7 +20,9 @@ export default function MapSelector() {
         : <MapSelectorFrameImage />
       }
       <div id="map-selector">
-        <div>Select map to load</div>
+        <div>
+          {data.isLoaded ? 'Select map to load' : 'Maps are loading...'}
+        </div>
         <button
           id="map-selector-collapse-button"
           onClick={onClick}

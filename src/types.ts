@@ -12,3 +12,8 @@ export interface MapContextData {
   setCurrentMap: (mapData: React.SetStateAction<MapData | undefined>) => void,
   isLoaded: boolean
 }
+
+export interface InfoModalProps {
+  isModalDisplayed: boolean;
+  setIsModalDisplayed: React.Dispatch<React.SetStateAction<boolean>>;
+}
