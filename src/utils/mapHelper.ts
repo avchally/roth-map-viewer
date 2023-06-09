@@ -12,7 +12,7 @@ export async function retrieveMapData(mapList: string[]) {
   const mapDataList: MapData[] = [];
 
   for (const map of mapList) {
-    const mapData = await fetch(`/maps/${map}.obj`)
+    const mapData = await fetch(`maps/${map}.obj`)
       .then(res => res.text())
       .then(text => text.split('\n'));
 
@@ -48,7 +48,7 @@ export async function retrieveMapData(mapList: string[]) {
   return mapDataList;
 }
 
-export async function readListOfMaps(listOfMapsFile='/maplist.txt') {
+export async function readListOfMaps(listOfMapsFile='maplist.txt') {
   return await fetch(listOfMapsFile)
     .then((res) => res.text())
     .then((data) => data.split('\r\n'));
