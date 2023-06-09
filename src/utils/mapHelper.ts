@@ -44,12 +44,13 @@ export async function retrieveMapData(mapList: string[]) {
   }
 
   console.log('finished loading');
-  console.log(mapDataList);
   return mapDataList;
 }
 
-export async function readListOfMaps(listOfMapsFile='maplist.txt') {
+export async function readListOfMaps(listOfMapsFile='maplist.json') {
+  console.log(`loading ${listOfMapsFile}`);
   return await fetch(listOfMapsFile)
     .then((res) => res.text())
-    .then((data) => data.split('\r\n'));
+    .then((data) => JSON.parse(data).maps);
+    // .then((data) => data.split('\r\n'));
 }

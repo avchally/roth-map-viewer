@@ -11,7 +11,6 @@ export default function Map() {
 
   useEffect(() => {
     const geometry = ref.current;
-    console.log(mapData);
     
     if (geometry && mapData) {
       geometry.setIndex(mapData.indices);
